@@ -1,5 +1,6 @@
 enum AppRoutes {
-  onboarding('onboarding');
+  onboarding('onboarding'),
+  signIn('signIn');
   final String  value;
   const AppRoutes(this.value);
 }
@@ -11,7 +12,8 @@ extension RoutingExt on AppRoutes{
 switch(this){
   case AppRoutes.onboarding:
     return '/onboarding';
-  
+  case AppRoutes.signIn:
+    return '/signIn';
 }
   }
 

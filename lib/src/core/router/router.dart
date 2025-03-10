@@ -1,5 +1,6 @@
 import 'package:event_hub/src/core/router/route_utils.dart';
-import 'package:event_hub/src/features/onboarding/onboarding-1/onboarding_1.dart';
+import 'package:event_hub/src/features/auth/presentation/page/sign_in.dart';
+import 'package:event_hub/src/features/onboarding/presentation/pages/onboarding.dart';
 import 'package:go_router/go_router.dart';
 
 final appRouter = GoRouter(
@@ -8,7 +9,12 @@ final appRouter = GoRouter(
 GoRoute(
   path:AppRoutes.onboarding.toPath,
   name:AppRoutes.onboarding.toName,
-  builder:(context,state)=>const Onboarding1()
+  builder:(context,state)=>const OnboardingPage()
   ),
+  GoRoute(
+    path: AppRoutes.signIn.toPath,
+    name: AppRoutes.signIn.toName,
+    builder: (context, state) => const SignInPage(),
+    )
   ]
 );

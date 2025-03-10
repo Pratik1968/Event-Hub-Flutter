@@ -1,3 +1,4 @@
+import 'package:event_hub/src/core/provider/root_provider.dart';
 import 'package:event_hub/src/core/router/router.dart';
 import 'package:event_hub/src/core/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -10,12 +11,14 @@ class RootWidget extends StatelessWidget{
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize:const Size(375,812),
-      child: MaterialApp.router(
-        theme:ZTheme.lightTheme,
-        darkTheme:ZTheme.darkTheme,
-        themeMode: ThemeMode.system,
-        debugShowCheckedModeBanner: false,
-        routerConfig: appRouter,
+      child: RootProvider(
+        child: MaterialApp.router(
+          theme:AppTheme.lightTheme,
+          darkTheme:AppTheme.darkTheme,
+          themeMode: ThemeMode.system,
+          debugShowCheckedModeBanner: false,
+          routerConfig: appRouter,
+        ),
       ),
     );
   }
